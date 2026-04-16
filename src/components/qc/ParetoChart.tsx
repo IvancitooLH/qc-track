@@ -1,5 +1,4 @@
 import {
-  BarChart,
   Bar,
   XAxis,
   YAxis,

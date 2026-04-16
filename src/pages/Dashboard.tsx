@@ -10,7 +10,6 @@ import {
   FiAlertTriangle,
   FiBarChart,
   FiZap,
-  FiTarget,
   FiActivity,
 } from "react-icons/fi";
 
@@ -85,12 +84,12 @@ export default function Dashboard() {
           { label: "Anual", factor: 0.58 },
         ];
 
-        const nextForecast = periods.map((period) => {
+        const nextForecast: Forecast[] = periods.map((period) => {
           const estimate = Math.round(
             data.total * (1 + period.factor + riskFactor * 0.2),
           );
 
-          const risk =
+          const risk: Forecast["risk"] =
             estimate > data.total * 1.25
               ? "high"
               : estimate > data.total * 1.1
